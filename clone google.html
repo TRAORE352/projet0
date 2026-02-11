@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="fr-SN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Google Clones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="https://mail.google.com" target="_blank"> Gmail</a>
+        <a href="https://www.google.com/imghp">Images</a>
+        <a href="https://about.google/products/">Applications Google</a>
+        <a href="https://accounts.google.com">Comptes Google</a>
+    </header>
+
+    <!-- Logo + barre de recherche -->
+    <main class="main">
+        <img src="Google-logo.png" alt="Google Logo" class="logo">
+
+        <form action="https://www.google.com/search" method="get"> <input type="text" name="q" class="search-bar"
+                placeholder="Recherche Google">
+
+
+
+
+
+<div class="upload-menu">
+      <button type="button" class="upload-btn">+</button>
+      <div class="upload-options">
+        <button type="button" id="importImage">📷 Importer une image</button>
+        <button type="button" id="importFile">📎 Importer un fichier</button>
+      </div>
+    </div>
+
+
+
+
+<!-- Inputs cachés -->
+  <input type="file" id="imageInput" accept="image/*" style="display:none;">
+  <input type="file" id="fileInput" style="display:none;">
+
+  <!-- JavaScript intégré -->
+  <script>
+    const uploadBtn = document.querySelector('.upload-btn');
+    const uploadOptions = document.querySelector('.upload-options');
+    const imageInput = document.getElementById('imageInput');
+    const fileInput = document.getElementById('fileInput');
+
+    // Ouvrir/fermer le menu
+    uploadBtn.addEventListener('click', () => {
+      uploadOptions.style.display = uploadOptions.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Importer une image
+    document.getElementById('importImage').addEventListener('click', () => {
+      imageInput.click();
+    });
+
+    // Importer un fichier
+    document.getElementById('importFile').addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    // Afficher le nom du fichier choisi
+    imageInput.addEventListener('change', () => {
+      alert("Image sélectionnée : " + imageInput.files[0].name);
+    });
+
+    fileInput.addEventListener('change', () => {
+      alert("Fichier sélectionné : " + fileInput.files[0].name);
+    });
+  </script>
+
+
+
+
+            <div class="buttons">
+                <button type="submit">Recherche Google</button>
+                <button href="https://doodles.google/" type="submit" name="btnI" value="1">J'ai de la chance</button>
+            </div>
+        </form>
+    </main>
+
+
+
+    <!-- Message Safer Internet Day -->
+    <div class="safety-message"> <span href="">🛡️  Safer Internet Day : <a href="https://safety.google/intl/fr_ALL/"> découvrez 5 conseils pour protéger les plus jeunes en ligne </a>
+            </span> <br> Google disponible en :<a href="">Wolof</a> </div> <!-- Localisation et langue -->
+         
+
+
+    <div class="location"> Sénégal </div>
+    <div class="language"> </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <a href="https://about.google/">À propos</a>
+            <a href="https://ads.google.com/intl/fr_fr/home/">Publicité</a>
+            <a href="https://about.google/intl/fr_fr/">Entreprise</a>
+            <a href="https://www.google.com/search/howsearchworks/">Comment fonctionne la recherche Google ?</a>
+        </div>
+
+        <div class="footer-right">
+            <a href="https://policies.google.com/privacy">Confidentialité</a>
+            <a href="https://policies.google.com/terms">Conditions</a>
+            <a href="https://www.google.com/preferences">Paramètres</a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
